@@ -1,15 +1,19 @@
 'use client'
 
 import { useLoggedInContext } from '../context/logged'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '@/styles/header.module.scss'
 
 const Header = () => {
-  const { setLoggedIn } = useLoggedInContext()
+  const { logout } = useLoggedInContext()
+
+  const router = useRouter()
 
   const handleLogged = () => {
-    setLoggedIn(false)
+    logout(false)
+    router.push('/login')
   }
 
   return (

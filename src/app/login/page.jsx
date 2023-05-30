@@ -4,25 +4,23 @@ import { useLoggedInContext } from '../../context/logged'
 import { useRouter } from 'next/navigation'
 
 const Login = () => {
-  const { loggedIn, setLoggedIn } = useLoggedInContext()
-
-  const handleLogged = () => {
-    setLoggedIn(true)
-  }
+  const { LoggedIn, login } = useLoggedInContext()
   const router = useRouter()
 
-  const handleRoute = () => {
+  const handleLogged = () => {
+    login(true)
     router.push('/')
   }
-  return loggedIn
+
+  return LoggedIn
     ? (
       <>
         <h1>Login</h1>
-        <button onClick={handleLogged}>Iniciar Sesion</button>
+        <button onClick={handleLogged}>Entrar</button>
       </>
       )
     : (
-        handleRoute
+        router.push('/')
       )
 }
 
