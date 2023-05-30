@@ -1,22 +1,29 @@
-// import { useContext } from 'react'
-// import { useRouter } from 'next/navigation'
-// import { LoggedInContext } from '@/components/LoggerProvider'
+'use client'
 
-// const Login = () => {
-//   const { loggedIn, logger } = useContext(LoggedInContext)
+import { useLoggedInContext } from '../../context/logged'
+import { useRouter } from 'next/navigation'
 
-//   const router = useRouter()
+const Login = () => {
+  const { loggedIn, setLoggedIn } = useLoggedInContext()
 
-//   return loggedIn
-//     ? (
-//       <>
-//         <h1>Login</h1>
-//         <button onClick={logger}>Iniciar Sesion</button>
-//       </>
-//       )
-//     : (
-//         router.push('/')
-//       )
-// }
+  const handleLogged = () => {
+    setLoggedIn(true)
+  }
+  const router = useRouter()
 
-// export default Login
+  const handleRoute = () => {
+    router.push('/')
+  }
+  return loggedIn
+    ? (
+      <>
+        <h1>Login</h1>
+        <button onClick={handleLogged}>Iniciar Sesion</button>
+      </>
+      )
+    : (
+        handleRoute
+      )
+}
+
+export default Login

@@ -1,16 +1,19 @@
 'use client'
-// import { useContext } from 'react'
+
+import { useLoggedInContext } from '../../context/logged'
 import { useRouter } from 'next/navigation'
-// import { LoggedInContext } from '@/components/LoggerProvider'
 
 const Home = () => {
   // ToDo: Hacer validacion de conexion con la BD y el Login
-  // const { loggedIn } = useContext(LoggedInContext)
-  const loggedIn = true
+  const { loggedIn } = useLoggedInContext()
 
   const router = useRouter()
 
-  return loggedIn
+  const handleRoute = () => {
+    router.push('/login')
+  }
+
+  return loggedIn === true
     ? (
       <>
         <main>
@@ -19,7 +22,7 @@ const Home = () => {
       </>
       )
     : (
-        router.push('/login')
+        handleRoute
       )
 }
 

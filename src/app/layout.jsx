@@ -1,6 +1,7 @@
-import LoggerProvider from '@/components/LoggerProvider'
+'use client'
 import '../styles/globals.css'
 import { Jost } from 'next/font/google'
+import { LoggedInProvider } from '../context/logged'
 
 const jost = Jost({
   subsets: ['latin'],
@@ -16,9 +17,9 @@ const RootLayout = ({ children }) => {
   return (
     <html className={jost.variable} lang='es'>
       <body>
-        <LoggerProvider>
+        <LoggedInProvider>
           {children}
-        </LoggerProvider>
+        </LoggedInProvider>
       </body>
     </html>
   )
