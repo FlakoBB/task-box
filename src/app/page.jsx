@@ -1,5 +1,3 @@
-'use client'
-
 const Home = () => {
   // ToDo: Hacer validacion de conexion con la BD y el Login
   return (

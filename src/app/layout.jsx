@@ -1,7 +1,10 @@
 'use client'
+
 import '../styles/globals.css'
 import { Jost } from 'next/font/google'
-import { LoggedInProvider } from '../context/logged'
+import Header from '@/components/header'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 const jost = Jost({
   subsets: ['latin'],
@@ -14,12 +17,27 @@ export const metadata = {
 }
 
 const RootLayout = ({ children }) => {
+  const [loggedIn, setLoggedIn] = useState(null)
+  useEffect(() => {
+    setLoggedIn(false)
+  }, [])
+  const router = useRouter()
+
   return (
-    <html className={jost.variable} lang='es'>
+    <html className={jost.className} lang='es'>
       <body>
-        <LoggedInProvider>
-          {children}
-        </LoggedInProvider>
+        {
+          loggedIn
+            ? (
+              <>
+                <Header />
+                {children}
+              </>
+              )
+            : (
+                router.push('/')
+              )
+        }
       </body>
     </html>
   )
