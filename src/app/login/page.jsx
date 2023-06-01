@@ -1,5 +1,6 @@
 'use client'
 
+import LoginForm from '@/components/loginForm'
 import { useLoggedContext } from '@/context/loggedContext'
 import { useRouter } from 'next/navigation'
 
@@ -8,6 +9,7 @@ const Login = () => {
 
   const router = useRouter()
 
+  // ToDo: modificar funcion para registrar usuarios a la base de datos
   const handleLogin = () => {
     login()
     router.push('/')
@@ -15,10 +17,7 @@ const Login = () => {
 
   if (!loggedIn) {
     return (
-      <>
-        <h1>Login</h1>
-        <button onClick={handleLogin}>Entrar</button>
-      </>
+      <LoginForm validation={handleLogin} />
     )
   } else {
     router.push('/')

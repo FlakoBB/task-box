@@ -31,7 +31,7 @@ const Header = ({ userName }) => {
               <span className={styles.user_name}><Link href='/'>Volver</Link></span>
               )
         }
-        <button className={styles.btn_logout} onClick={handleLogout}>Cerrar Sesión</button>
+        <button className={styles.btn_logout} onClick={handleLogout}>Salir</button>
       </div>
     </header>
   )
