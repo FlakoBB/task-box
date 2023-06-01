@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import { Jost } from 'next/font/google'
 import { LoggedProvider } from '@/context/loggedContext'
 
