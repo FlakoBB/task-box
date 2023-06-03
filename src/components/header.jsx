@@ -20,7 +20,7 @@ const Header = ({ userName }) => {
 
   return (
     <header className={styles.header}>
-      <Image className={styles.logo} width='200' height='100' alt='Logo de la app Task Box en color Azul' src='/TaskBox_Logo.png' />
+      <Link className={styles.link_logo} target='_blank' href='https://bit.ly/follow-flako'><Image className={styles.logo} width='200' height='100' alt='Logo de la app Task Box en color Azul' src='/TaskBox_Logo.png' /></Link>
       <div className={styles.options}>
         {
           location

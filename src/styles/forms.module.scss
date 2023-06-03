@@ -11,72 +11,75 @@
   height: 100dvh;
   display: grid;
   place-items: center;
+}
 
-  .form_container {
-    width: 30rem;
-    padding: 1.4rem;
-    border-radius: .8rem;
-    box-shadow: 0 0 30px 10px rgba(vars.$mainColor, .5);
+.form_container {
+  width: 30rem;
+  padding: 1.4rem;
+  border-radius: .8rem;
+  border: 4px solid vars.$mainColor;
 
-    .form {
+  .form {
+    @include flex-column-start-center();
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    .form_title {
+      width: 100%;
+      font-size: 1.8rem;
+      color: vars.$mainColor;
+      margin-bottom: 1.2rem;
+      border-bottom: 4px solid vars.$mainColor;
+    }
+
+    .input_group {
+      align-self: stretch;
       @include flex-column-start-center();
-      gap: 1rem;
-      margin-bottom: 1.5rem;
 
-      .form_title {
-        width: 100%;
-        font-size: 1.8rem;
-        color: vars.$mainColor;
-        margin-bottom: 1.2rem;
-        border-bottom: 2px solid vars.$mainColor;
-      }
-
-      .input_group {
-        align-self: stretch;
-        @include flex-column-start-center();
-
-        .label {
-          font-size: 1.2rem;
-          font-weight: bold;
-          color: vars.$mainColor;
-        }
-
-        .field {
-          width: 100%;
-          font-size: 1.2rem;
-          background: none;
-          border: none;
-          outline: none;
-          border-bottom: 2px solid vars.$mainColor;
-        }
-      }
-
-      .btn_form {
-        padding: .2rem 1rem;
+      .label {
         font-size: 1.2rem;
-        background-color: vars.$mainColor;
-        color: vars.$lightColor;
-        border: 2px solid vars.$mainColor;
-        border-radius: .4rem;
-        outline: none;
-        cursor: pointer;
+        font-weight: bold;
+        color: vars.$mainColor;
+      }
 
-        &:hover {
-          background-color: vars.$lightColor;
-          color: vars.$mainColor;
-        }
+      .field,
+      .select {
+        width: 100%;
+        padding: .4rem .6rem;
+        font-size: 1.2rem;
+        background-color: rgba(vars.$mainColor, .1);
+        border: none;
+        border-radius: .6rem;
+        outline: none;
       }
     }
 
-    .change {
+    .btn_form {
+      width: 100%;
+      padding: .4rem 0;
+      font-size: 1.2rem;
+      background-color: vars.$mainColor;
+      color: vars.$lightColor;
+      border: 2px solid vars.$mainColor;
+      border-radius: .6rem;
+      outline: none;
+      cursor: pointer;
 
-      a {
-        text-decoration: none;
+      &:hover {
+        background-color: vars.$lightColor;
         color: vars.$mainColor;
+      }
+    }
+  }
 
-        &:hover {
-          color: rgba(vars.$mainColor, .5);
-        }
+  .option {
+
+    a {
+      text-decoration: none;
+      color: vars.$mainColor;
+
+      &:hover {
+        color: rgba(vars.$mainColor, .5);
       }
     }
   }

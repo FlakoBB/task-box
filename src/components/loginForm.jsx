@@ -4,8 +4,8 @@ import styles from '@/styles/forms.module.scss'
 
 const LoginForm = ({ validation }) => {
   return (
-    <main className={styles.main_container}>
-      <section className={styles.form_container}>
+    <section className={styles.main_container}>
+      <article className={styles.form_container}>
         <form className={styles.form}>
           <h2 className={styles.form_title}>Ingresar</h2>
           <div className={styles.input_group}>
@@ -19,9 +19,9 @@ const LoginForm = ({ validation }) => {
           <button onClick={validation} className={styles.btn_form}>Entrar</button>
           {/* // ToDo: Cambiar por onSubmit para validar usuario con la base de datos */}
         </form>
-        <span className={styles.change}>¿Eres nuevo usuario? <Link href='/register'>Crea una cuenta</Link>.</span>
-      </section>
-    </main>
+        <span className={styles.option}>¿Eres nuevo usuario? <Link href='/register'>Crea una cuenta</Link>.</span>
+      </article>
+    </section>
   )
 }
 
