@@ -1,22 +1,30 @@
 import styles from '@/styles/listContainer.module.scss'
+import TaskItem from './taskItem'
 
 const ListContainer = () => {
   return (
-    <section className={styles.container}>
-      <div className={styles.lista}>
-        <ul>
-          <li>Tarea 1</li>
-          <li>Tarea 2</li>
-          <li>Tarea 3</li>
-          <li>Tarea 4</li>
-        </ul>
-      </div>
-      <div className={styles.controles}>
-        <button>Todas</button>
-        <button>Pendientes</button>
-        <button>Completas</button>
-        <button>Normales</button>
-        <button>Urgentes</button>
+    <section className={styles.tasks_section}>
+      <h1 className={styles.section_title}>Tus Tareas</h1>
+      <div className={styles.container}>
+        <ol className={styles.list}>
+          {/* // ToDo: Iterar sobre un objeto que contenga las tareas y mostrar un item por cada una */}
+          <TaskItem />
+          <TaskItem />
+          <TaskItem />
+          <TaskItem />
+          <TaskItem />
+          <TaskItem />
+          <TaskItem />
+          <TaskItem />
+          <TaskItem />
+        </ol>
+        <div className={styles.controls}>
+          <button>Todas</button>
+          <button>Pendientes</button>
+          <button>Completas</button>
+          <button>Normales</button>
+          <button>Urgentes</button>
+        </div>
       </div>
     </section>
   )

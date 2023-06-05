@@ -6,9 +6,19 @@
   box-sizing: border-box;
   font-family: var(--jost-font);
   color: vars.$darkColor;
+  user-select: none;
 }
 
 body {
   min-height: 100dvh;
   background-color: vars.$lightColor;
+}
+
+::-webkit-scrollbar {
+  width: .6rem;
+  background-color: rgba(vars.$mainColor, .1);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: vars.$mainColor;
 }
