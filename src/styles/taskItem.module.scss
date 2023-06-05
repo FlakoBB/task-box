@@ -10,9 +10,32 @@
   background-color: rgba(vars.$mainColor, .1);
   cursor: pointer;
 
-  .title {
-    flex-grow: 1;
-    font-size: 1.4rem;
+  .task_data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    .title {
+      flex-grow: 1;
+      font-size: 1.4rem;
+    }
+
+    .priority {
+      font-size: 1rem;
+    }
+
+    .urgent {
+      padding: .2rem .6rem;
+      border-radius: .4rem;
+      background-color: vars.$urgentColor;
+    }
+
+    .normal {
+      padding: .2rem .6rem;
+      border-radius: .4rem;
+      background-color: vars.$normalColor;
+    }
   }
 
   .btns_group {
@@ -20,6 +43,7 @@
     align-items: center;
     justify-content: center;
     gap: .6rem;
+
     .item_btn {
       width: 3rem;
       height: 3rem;

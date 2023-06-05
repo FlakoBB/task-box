@@ -3,6 +3,7 @@
 .main {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  grid-template-rows: calc(100dvh - 10rem);
   gap: 2rem;
   height: calc(100dvh - 6rem);
   padding: 2rem 4rem;

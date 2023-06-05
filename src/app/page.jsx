@@ -14,7 +14,7 @@ const Home = () => {
   if (loggedIn) {
     return (
       <>
-        <Header userName='JoaquinGL' />
+        <Header userName='FlakoBB' />
         <main className={styles.main}>
           <ListContainer />
           <TaskForm />

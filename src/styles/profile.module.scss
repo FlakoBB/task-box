@@ -1,0 +1,114 @@
+@use 'variables' as vars;
+
+.main_container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 2rem;
+  height: calc(100dvh - 6rem);
+  padding: 2rem 4rem;
+
+  .user_data {
+    border: 4px solid vars.$mainColor;
+    border-radius: .6rem;
+    padding: 1.4rem;
+
+    .user_title {
+      width: 100%;
+      font-size: 1.8rem;
+      color: vars.$mainColor;
+      border-bottom: 4px solid vars.$mainColor;
+      margin-bottom: 1.2rem;
+    }
+
+    .data_container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      height: calc(100% - 4.4rem);
+
+      .field_area {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+
+        .label {
+          font-size: 1.2rem;
+          color: vars.$mainColor;
+        }
+
+        .field_data {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding: .6rem;
+          border-radius: .4rem;
+          background-color: rgba(vars.$mainColor, .1);
+
+          .data {
+            font-size: 1.4rem;
+          }
+
+          button {
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: .4rem;
+            font-size: 1.2rem;
+            color: vars.$lightColor;
+            border: 2px solid vars.$mainColor;
+            background-color: vars.$mainColor;
+            outline: none;
+            cursor: pointer;
+
+            &:hover {
+              background-color: vars.$lightColor;
+              color: vars.$mainColor;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .danger_zone {
+    padding: 1.4rem;
+    border: 4px solid vars.$deleteColor;
+    border-radius: .6rem;
+
+    .danger_title {
+      width: 100%;
+      font-size: 1.8rem;
+      color: vars.$deleteColor;
+      border-bottom: 4px solid vars.$deleteColor;
+      margin-bottom: 1.2rem;
+    }
+
+    .danger_btns {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      height: calc(100% - 4.4rem);
+
+      button {
+        align-self: stretch;
+        height: 3rem;
+        border-radius: .4rem;
+        font-size: 1.2rem;
+        color: vars.$lightColor;
+        background-color: vars.$deleteColor;
+        border: 2px solid vars.$deleteColor;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: vars.$lightColor;
+          color: vars.$deleteColor;
+        }
+      }
+    }
+  }
+}

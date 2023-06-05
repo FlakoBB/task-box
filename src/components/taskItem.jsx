@@ -3,7 +3,10 @@ import styles from '@/styles/taskItem.module.scss'
 const TaskItem = () => {
   return (
     <li className={styles.item}>
-      <span className={styles.title}>Nombre de la tarea</span>
+      <div className={styles.task_data}>
+        <span className={styles.title}>Nombre de la tarea</span>
+        <span className={`${styles.priority} ${styles.normal}`}>Normal</span>
+      </div>
       <div className={styles.btns_group}>
         {/* // ToDo: Poner iconos de FontAwesome a los botones */}
         <button className={`${styles.item_btn} ${styles.btn_delete}`}>B</button>
