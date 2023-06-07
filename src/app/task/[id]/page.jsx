@@ -1,3 +1,6 @@
+import Header from '@/components/header'
+import TaskInfo from '@/components/taskInfo'
+
 const TaskPage = ({ params }) => {
   const tasksList = [
     {
@@ -17,9 +20,9 @@ const TaskPage = ({ params }) => {
     {
       id: 3,
       title: 'Tarea 3',
-      description: 'Descripcionde la trarea 3',
+      description: 'Esta es la descripcion improvisada de la TAREA 3. Es una descripcion larga para ver como se comporta el campo a diferentes tamañosd de descripciones. espero que con esto sea suficioente, si no tendre que regresar a escribir más.',
       priority: 'Normal',
-      state: false
+      state: true
     },
     {
       id: 4,
@@ -46,18 +49,20 @@ const TaskPage = ({ params }) => {
 
   const { id } = params
 
-  const task = () => {
-    tasksList.forEach(task => {
-      if (task.id === id) console.log(task)
-    })
-  }
-  console.log(task)
+  const idNumber = parseInt(id)
 
-  return (
-    <div>
-      <h1>Esta es la tarea {id}</h1>
-      <p>Hoal</p>
-    </div>
-  )
+  const task = tasksList.find(taskF => taskF.id === idNumber)
+
+  if (task) {
+    return (
+      <>
+        <Header />
+        <TaskInfo task={task} />
+      </>
+    )
+  } else {
+    return <h1>Tarea no encontrada</h1>
+  }
 }
+
 export default TaskPage
