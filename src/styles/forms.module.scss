@@ -34,13 +34,11 @@
 
       .label {
         @include mix.label_field;
-        color: vars.$mainColor;
       }
 
       .field,
       .select {
         @include mix.field;
-        background-color: rgba(vars.$mainColor, .1);
       }
     }
 

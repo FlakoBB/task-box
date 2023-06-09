@@ -1,84 +1,83 @@
 @use 'variables' as vars;
+@use 'mixins' as mix;
 
-// .item {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   gap: 1rem;
-//   padding: .6rem;
-//   border-radius: .4rem;
-//   background-color: rgba(vars.$mainColor, .1);
-//   cursor: pointer;
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .6rem;
+  background-color: rgba(vars.$mainColor, .1);
+  border-radius: .6rem;
+  padding: .6rem;
+  font-size: 1.4rem;
 
-//   .task_data {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: flex-start;
-//     justify-content: center;
+  &:hover {
+    background-color: rgba(vars.$mainColor, .4);
+  }
 
-//     .title {
-//       flex-grow: 1;
-//       font-size: 1.4rem;
-//     }
+  a {
+    width: 75%;
+    white-space: nowrap;
+    overflow: hidden;
 
-//     .priority {
-//       font-size: 1rem;
-//     }
+    .task_data {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: .4rem;
 
-//     .urgent {
-//       padding: .2rem .6rem;
-//       border-radius: .4rem;
-//       background-color: vars.$urgentColor;
-//     }
+      .title {
+        text-overflow: ellipsis;
+      }
 
-//     .normal {
-//       padding: .2rem .6rem;
-//       border-radius: .4rem;
-//       background-color: vars.$normalColor;
-//     }
-//   }
+      .priority {
+        padding: .2rem .6rem;
+        border-radius: .6rem;
+        font-size: 1rem;
+      }
 
-//   .btns_group {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     gap: .6rem;
+      .normal {
+        background-color: vars.$normalColor;
+      }
 
-//     .item_btn {
-//       width: 3rem;
-//       height: 3rem;
-//       border-radius: .4rem;
-//       font-size: 1.2rem;
-//       color: vars.$lightColor;
-//       border: none;
-//       outline: none;
-//       cursor: pointer;
+      .urgent {
+        background-color: vars.$urgentColor;
+      }
+    }
+  }
 
-//       &:hover {
-//         background-color: vars.$lightColor;
-//       }
-//     }
+  .btns_group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
 
-//     .btn_delete {
-//       border: 2px solid vars.$deleteColor;
-//       background-color: vars.$deleteColor;
+    button {
+      @include mix.gen_btn;
+      width: 3rem;
+      height: 3rem;
+    }
 
-//       &:hover {
-//         color: vars.$deleteColor;
-//       }
-//     }
+    .btn_complete {
+      background-color: vars.$completeColor;
+      border-color: vars.$completeColor;
 
-//     .btn_complete {
-//       border: 2px solid vars.$completeColor;
-//       background-color: vars.$completeColor;
+      &:hover {
+        background-color: vars.$lightColor;
+        color: vars.$completeColor;
+      }
+    }
 
-//       &:hover {
-//         color: vars.$completeColor;
-//       }
-//     }
-//   }
+    .btn_delete {
+      background-color: vars.$deleteColor;
+      border-color: vars.$deleteColor;
 
-//   &:hover {
-//     background-color: rgba(vars.$mainColor, .4);
-//   }
-// }
+      &:hover {
+        background-color: vars.$lightColor;
+        color: vars.$deleteColor;
+      }
+    }
+  }
+}

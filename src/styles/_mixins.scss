@@ -17,13 +17,14 @@
 @mixin label_field {
   font-size: 1.2;
   font-weight: bold;
+  color: vars.$mainColor;
 }
 
 @mixin field {
   width: 100%;
   padding: .4rem .6rem;
   font-size: 1.2rem;
-  background: none;
+  background-color: rgba(vars.$mainColor, .1);
   border: none;
   border-radius: .6rem;
   outline: none;
