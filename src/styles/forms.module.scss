@@ -15,11 +15,19 @@
   @include mix.gen_container;
   border-color: vars.$mainColor;
 
+  .form_title {
+    @include mix.section_title;
+    color: vars.$mainColor;
+  }
+
   .form {
-    .form_title {
-      @include mix.section_title;
-      color: vars.$mainColor;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly;
+    gap: 1.4rem;
+    height: calc(100% - 4.4rem);
+    margin-bottom: 1.4rem;
 
     .input_group {
       @include mix.flex_col_start_center;
@@ -39,7 +47,6 @@
     .btn_form {
       @include mix.gen_btn;
       width: 100%;
-      margin: 1.2rem 0; // * tal vez borrar
       background-color: vars.$mainColor;
       border-color: vars.$mainColor;
 
@@ -52,7 +59,6 @@
 
   .option {
     a {
-      text-decoration: none;
       color: vars.$mainColor;
 
       &:hover {

@@ -18,8 +18,8 @@ const RegisterForm = () => {
   return (
     <section className={styles.main_container}>
       <article className={styles.form_container}>
+        <h2 className={styles.form_title}>Registrarse</h2>
         <form className={styles.form}>
-          <h2 className={styles.form_title}>Registrarse</h2>
           <div className={styles.input_group}>
             <label className={styles.label} htmlFor='name'>Nombre:</label>
             <input className={styles.field} type='text' id='name' />
