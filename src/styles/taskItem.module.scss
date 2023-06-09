@@ -1,84 +1,84 @@
 @use 'variables' as vars;
 
-.item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: .6rem;
-  border-radius: .4rem;
-  background-color: rgba(vars.$mainColor, .1);
-  cursor: pointer;
+// .item {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   gap: 1rem;
+//   padding: .6rem;
+//   border-radius: .4rem;
+//   background-color: rgba(vars.$mainColor, .1);
+//   cursor: pointer;
 
-  .task_data {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+//   .task_data {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//     justify-content: center;
 
-    .title {
-      flex-grow: 1;
-      font-size: 1.4rem;
-    }
+//     .title {
+//       flex-grow: 1;
+//       font-size: 1.4rem;
+//     }
 
-    .priority {
-      font-size: 1rem;
-    }
+//     .priority {
+//       font-size: 1rem;
+//     }
 
-    .urgent {
-      padding: .2rem .6rem;
-      border-radius: .4rem;
-      background-color: vars.$urgentColor;
-    }
+//     .urgent {
+//       padding: .2rem .6rem;
+//       border-radius: .4rem;
+//       background-color: vars.$urgentColor;
+//     }
 
-    .normal {
-      padding: .2rem .6rem;
-      border-radius: .4rem;
-      background-color: vars.$normalColor;
-    }
-  }
+//     .normal {
+//       padding: .2rem .6rem;
+//       border-radius: .4rem;
+//       background-color: vars.$normalColor;
+//     }
+//   }
 
-  .btns_group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .6rem;
+//   .btns_group {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     gap: .6rem;
 
-    .item_btn {
-      width: 3rem;
-      height: 3rem;
-      border-radius: .4rem;
-      font-size: 1.2rem;
-      color: vars.$lightColor;
-      border: none;
-      outline: none;
-      cursor: pointer;
+//     .item_btn {
+//       width: 3rem;
+//       height: 3rem;
+//       border-radius: .4rem;
+//       font-size: 1.2rem;
+//       color: vars.$lightColor;
+//       border: none;
+//       outline: none;
+//       cursor: pointer;
 
-      &:hover {
-        background-color: vars.$lightColor;
-      }
-    }
+//       &:hover {
+//         background-color: vars.$lightColor;
+//       }
+//     }
 
-    .btn_delete {
-      border: 2px solid vars.$deleteColor;
-      background-color: vars.$deleteColor;
+//     .btn_delete {
+//       border: 2px solid vars.$deleteColor;
+//       background-color: vars.$deleteColor;
 
-      &:hover {
-        color: vars.$deleteColor;
-      }
-    }
+//       &:hover {
+//         color: vars.$deleteColor;
+//       }
+//     }
 
-    .btn_complete {
-      border: 2px solid vars.$completeColor;
-      background-color: vars.$completeColor;
+//     .btn_complete {
+//       border: 2px solid vars.$completeColor;
+//       background-color: vars.$completeColor;
 
-      &:hover {
-        color: vars.$completeColor;
-      }
-    }
-  }
+//       &:hover {
+//         color: vars.$completeColor;
+//       }
+//     }
+//   }
 
-  &:hover {
-    background-color: rgba(vars.$mainColor, .4);
-  }
-}
+//   &:hover {
+//     background-color: rgba(vars.$mainColor, .4);
+//   }
+// }
