@@ -6,7 +6,7 @@ const TaskInfo = ({ task }) => {
       <section className={styles.container}>
         <h2 className={styles.section_title}>Informacion De La Tarea</h2>
         <article className={styles.task_info}>
-          <div className={styles.subsection}>
+          <div className={`${styles.subsection} ${styles.subsec1}`}>
             <div className={styles.field_area}>
               <label className={styles.label}>Titulo:</label>
               <div className={styles.field_data}>
@@ -22,7 +22,7 @@ const TaskInfo = ({ task }) => {
               </div>
             </div>
           </div>
-          <div className={styles.subsection}>
+          <div className={`${styles.subsection} ${styles.subsec2}`}>
             <div className={styles.field_area}>
               <label className={styles.label}>Prioridad:</label>
               <div className={styles.field_data}>
