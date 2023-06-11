@@ -1,6 +1,5 @@
 import styles from '@/styles/listContainer.module.scss'
 import TaskItem from './taskItem'
-import Link from 'next/link'
 
 const ListContainer = () => {
   const tasksList = [
@@ -13,7 +12,7 @@ const ListContainer = () => {
     },
     {
       id: 2,
-      title: 'Tarea 2',
+      title: 'Tarea 2: Titulo largo para ver si funciona el overflow y etcetera',
       description: 'Descripcionde la trarea 2',
       priority: 'Urgente',
       state: false
@@ -56,9 +55,7 @@ const ListContainer = () => {
           {/* // ToDo: Iterar sobre un objeto que contenga las tareas y mostrar un item por cada una */}
           {
             tasksList.map((task) => (
-              <Link key={task.id} href={`/task/${task.id}`}>
-                <TaskItem taskData={task} />
-              </Link>
+              <TaskItem key={task.id} taskData={task} />
             ))
           }
         </ol>

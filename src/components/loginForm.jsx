@@ -6,8 +6,8 @@ const LoginForm = ({ validation }) => {
   return (
     <section className={styles.main_container}>
       <article className={styles.form_container}>
+        <h2 className={styles.form_title}>Ingresar</h2>
         <form className={styles.form}>
-          <h2 className={styles.form_title}>Ingresar</h2>
           <div className={styles.input_group}>
             <label className={styles.label} htmlFor='username'>Usuario:</label>
             <input className={styles.field} type='text' id='username' />
