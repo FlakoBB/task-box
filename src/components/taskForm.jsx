@@ -8,7 +8,7 @@ const TaskForm = () => {
 
   return (
     <article className={styles.form_container}>
-      <h2 className={styles.form_title}>Agregar Nueva Tarea</h2>
+      <h2 className={styles.form_title}>Nueva Tarea</h2>
       <form className={styles.form}>
         <div className={styles.input_group}>
           <label className={styles.label} htmlFor='title'>Titulo:</label>

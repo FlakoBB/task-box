@@ -16,8 +16,9 @@ const Home = () => {
       <>
         <Header userName='FlakoBB' />
         <main className={styles.main}>
+          <button className={styles.btn_new_task}>Nueva Tarea</button>
           <ListContainer />
-          <TaskForm />
+          <div className={styles.form_section}><TaskForm /></div>
         </main>
       </>
     )

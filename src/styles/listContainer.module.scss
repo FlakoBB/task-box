@@ -45,5 +45,52 @@
         }
       }
     }
+
+    .controls_select {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      .label {
+        @include mix.label_field;
+      }
+
+      .filter {
+        @include mix.field;
+        max-width: 10rem;
+      }
+    }
   }
 }
+
+@media (max-width: 1023px) {
+  .tasks_section {
+    .container {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: stretch;
+      justify-content: center;
+
+      .list {
+        overflow: auto;
+        padding: 0;
+      }
+
+      .controls {
+        display: none;
+      }
+
+      .controls_select {
+        display: flex;
+      }
+    }
+  }
+}
+
+// @media (max-width: 767px) {
+//   .tasks_section {
+//     .container {
+
+//     }
+//   }
+// }

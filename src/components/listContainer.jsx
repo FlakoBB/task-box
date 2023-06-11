@@ -66,6 +66,16 @@ const ListContainer = () => {
           <button>Normales</button>
           <button>Urgentes</button>
         </div>
+        <div className={styles.controls_select}>
+          <label className={styles.label}>Filtro:</label>
+          <select className={styles.filter}>
+            <option>Todas</option>
+            <option>Pendientes</option>
+            <option>Completas</option>
+            <option>Normales</option>
+            <option>Urgentes</option>
+          </select>
+        </div>
       </div>
     </section>
   )

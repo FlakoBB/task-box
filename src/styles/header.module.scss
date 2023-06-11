@@ -54,3 +54,13 @@
     }
   }
 }
+
+@media (max-width: 1023px) {
+  .header {
+    padding: 1rem;
+
+    .options {
+      gap: .6rem;
+    }
+  }
+}

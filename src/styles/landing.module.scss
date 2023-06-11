@@ -1,10 +1,47 @@
 @use 'variables' as vars;
+@use 'mixins' as mix;
 
 .main {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: calc(100dvh - 10rem);
   gap: 2rem;
-  height: calc(100dvh - 6rem);
+  min-height: calc(100dvh - 6rem);
   padding: 2rem 4rem;
+
+  .btn_new_task {
+    display: none;
+    @include mix.gen_btn;
+    background-color: vars.$mainColor;
+    border-color: vars.$mainColor;
+
+    &:hover {
+      background-color: vars.$lightColor;
+      color: vars.$mainColor;
+    }
+  }
+
+  .form_section > :first-child {
+    height: 100%;
+  }
+}
+
+
+@media  (max-width: 1023px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: start;
+    gap: 1rem;
+    padding: 1rem;
+
+    .btn_new_task {
+      display: block;
+    }
+
+    .form_section {
+      display: none;
+    }
+  }
 }
