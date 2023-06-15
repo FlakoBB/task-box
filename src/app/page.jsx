@@ -6,17 +6,33 @@ import { useRouter } from 'next/navigation'
 import styles from '@/styles/landing.module.scss'
 import TaskForm from '@/components/taskForm'
 import ListContainer from '@/components/listContainer'
+import { useRef } from 'react'
 
 const Home = () => {
   const { loggedIn } = useLoggedContext()
   const router = useRouter()
 
+  const modal = useRef()
+
+  const handleModal = () => {
+    if (modal.current) {
+      const currentDisplay = modal.current.style.display
+      modal.current.style.display = currentDisplay === 'none' ? 'flex' : 'none'
+    }
+  }
+
   if (loggedIn) {
     return (
       <>
+        <div className={styles.modal} ref={modal}>
+          <button onClick={handleModal}>X</button>
+          <div>
+            <TaskForm />
+          </div>
+        </div>
         <Header userName='FlakoBB' />
         <main className={styles.main}>
-          <button className={styles.btn_new_task}>Nueva Tarea</button>
+          <button className={styles.btn_new_task} onClick={handleModal}>Nueva Tarea</button>
           <ListContainer />
           <div className={styles.form_section}><TaskForm /></div>
         </main>

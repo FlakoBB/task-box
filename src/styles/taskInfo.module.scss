@@ -2,7 +2,7 @@
 @use 'mixins' as mix;
 
 .main {
-  height: calc(100dvh - 6rem);
+  min-height: calc(100dvh - 6rem);
   padding: 2rem 4rem;
 
   .container {
@@ -93,6 +93,26 @@
               background-color: vars.$lightColor;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .main {
+    padding: 1rem;
+
+    .container {
+      .task_info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .subsection {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
         }
       }
     }

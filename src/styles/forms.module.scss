@@ -2,7 +2,7 @@
 @use 'mixins' as mix;
 
 .main_container {
-  height: 100dvh;
+  min-height: 100dvh;
   display: grid;
   place-items: center;
 }
@@ -63,5 +63,15 @@
         color: rgba(vars.$mainColor, .5);
       }
     }
+  }
+}
+
+@media (max-width: 512px) {
+  .main_container {
+    padding: 1rem;
+  }
+
+  .main_container > :first-child {
+    width: 100%;
   }
 }

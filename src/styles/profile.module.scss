@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 2rem;
-  height: calc(100dvh - 6rem);
+  min-height: calc(100dvh - 6rem);
   padding: 2rem 4rem;
 
   .user_data {
@@ -80,6 +80,23 @@
           color: vars.$deleteColor;
           background-color: vars.$lightColor;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .main_container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: start;
+    gap: 1rem;
+    padding: 1rem;
+
+    .danger_zone{
+      .danger_btns {
+        gap: 2rem;
       }
     }
   }
