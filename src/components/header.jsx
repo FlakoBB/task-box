@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 const Header = ({ userName }) => {
   const { logout } = useLoggedContext()
   const pathname = usePathname()
-  const location = pathname === '/'
+  const currentLocation = pathname === '/'
   const router = useRouter()
 
   const handleLogout = () => {
@@ -23,7 +23,7 @@ const Header = ({ userName }) => {
       <Link className={styles.link_logo} target='_blank' href='https://bit.ly/follow-flako'><Image className={styles.logo} width='200' height='100' alt='Logo de la app Task Box en color Azul' src='/TaskBox_Logo.png' /></Link>
       <div className={styles.options}>
         {
-          location
+          currentLocation
             ? (
               <span className={styles.user_name}><Link href='/profile'>{userName}</Link></span>
               )
