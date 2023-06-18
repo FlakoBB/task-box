@@ -2,18 +2,10 @@
 
 import Link from 'next/link'
 import styles from '@/styles/forms.module.scss'
-import { useRouter } from 'next/navigation'
 import { useRef } from 'react'
 
-const RegisterForm = () => {
+const RegisterForm = ({ register }) => {
   const refUser = useRef()
-  const router = useRouter()
-
-  const register = (event) => {
-    event.preventDefault()
-    alert(`Usuario registrado, ahora puedes iniciar sesion como ${refUser.current.value}`)
-    router.push('/login')
-  }
 
   return (
     <section className={styles.main_container}>
