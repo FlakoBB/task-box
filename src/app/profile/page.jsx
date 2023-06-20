@@ -2,16 +2,23 @@
 
 import Header from '@/components/header'
 import { useLoggedContext } from '@/context/loggedContext'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import styles from '@/styles/profile.module.scss'
 
 const Profile = () => {
-  const { loggedIn } = useLoggedContext()
+  const { loggedIn, logout } = useLoggedContext()
   const router = useRouter()
+
+  const pathname = usePathname()
+  const handleLogout = () => {
+    logout()
+    router.push('/login')
+  }
+
   if (loggedIn) {
     return (
       <>
-        <Header />
+        <Header pathname={pathname} handleLogout={handleLogout} />
         <main className={styles.main_container}>
           <section className={styles.user_data}>
             <h2 className={styles.user_title}>Datos Del Usuario</h2>

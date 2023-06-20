@@ -1,12 +1,7 @@
-'use client'
-
 import Link from 'next/link'
 import styles from '@/styles/forms.module.scss'
-import { useRef } from 'react'
 
 const RegisterForm = ({ register }) => {
-  const refUser = useRef()
-
   return (
     <section className={styles.main_container}>
       <article className={styles.form_container}>
@@ -22,7 +17,7 @@ const RegisterForm = ({ register }) => {
           </div>
           <div className={styles.input_group}>
             <label className={styles.label} htmlFor='username'>Usuario:</label>
-            <input ref={refUser} className={styles.field} type='text' id='username' />
+            <input className={styles.field} type='text' id='username' />
           </div>
           <div className={styles.input_group}>
             <label className={styles.label} htmlFor='password'>Contraeña:</label>

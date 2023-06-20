@@ -1,22 +1,22 @@
-'use client'
+// 'use client'
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useLoggedContext } from '@/context/loggedContext'
+// import { useLoggedContext } from '@/context/loggedContext'
 import styles from '@/styles/header.module.scss'
-import { usePathname, useRouter } from 'next/navigation'
+// import { usePathname, useRouter } from 'next/navigation'
 import PropTypes from 'prop-types'
 
-const Header = ({ userName }) => {
-  const { logout } = useLoggedContext()
-  const pathname = usePathname()
+const Header = ({ userName, pathname, handleLogout }) => {
+  // const { logout } = useLoggedContext()
+  // const pathname = usePathname()
   const currentLocation = pathname === '/'
-  const router = useRouter()
+  // const router = useRouter()
 
-  const handleLogout = () => {
-    logout()
-    router.push('/login')
-  }
+  // const handleLogout = () => {
+  //   logout()
+  //   router.push('/login')
+  // }
 
   return (
     <header className={styles.header}>
@@ -38,7 +38,9 @@ const Header = ({ userName }) => {
 }
 
 Header.propTypes = {
-  userName: PropTypes.string
+  userName: PropTypes.string,
+  pathname: PropTypes.string.isRequired,
+  handleLogout: PropTypes.func.isRequired
 }
 
 export default Header

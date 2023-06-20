@@ -1,5 +1,9 @@
+'use client'
+
 import Header from '@/components/header'
 import TaskInfo from '@/components/taskInfo'
+import { useRouter, usePathname } from 'next/navigation'
+import { useLoggedContext } from '@/context/loggedContext'
 
 const TaskPage = ({ params }) => {
   const tasksList = [
@@ -53,10 +57,18 @@ const TaskPage = ({ params }) => {
 
   const task = tasksList.find(taskF => taskF.id === idNumber)
 
+  const { logout } = useLoggedContext()
+  const router = useRouter()
+  const pathname = usePathname()
+  const handleLogout = () => {
+    logout()
+    router.push('/login')
+  }
+
   if (task) {
     return (
       <>
-        <Header />
+        <Header pathname={pathname} handleLogout={handleLogout} />
         <TaskInfo task={task} />
       </>
     )
