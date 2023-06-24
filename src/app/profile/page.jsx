@@ -1,7 +1,7 @@
 'use client'
 
 import Header from '@/components/header'
-import { useLoggedContext } from '@/context/loggedContext'
+import { useLoggedContext } from '../layout'
 import { useRouter, usePathname } from 'next/navigation'
 import styles from '@/styles/profile.module.scss'
 

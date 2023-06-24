@@ -3,7 +3,7 @@
 import Header from '@/components/header'
 import TaskInfo from '@/components/taskInfo'
 import { useRouter, usePathname } from 'next/navigation'
-import { useLoggedContext } from '@/context/loggedContext'
+import { useLoggedContext } from '@/app/layout'
 
 const TaskPage = ({ params }) => {
   const tasksList = [

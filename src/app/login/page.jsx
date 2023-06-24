@@ -1,7 +1,7 @@
 'use client'
 
 import LoginForm from '@/components/loginForm'
-import { useLoggedContext } from '@/context/loggedContext'
+import { useLoggedContext } from '../layout'
 import { useRouter } from 'next/navigation'
 
 const Login = () => {
