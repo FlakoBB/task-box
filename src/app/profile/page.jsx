@@ -4,6 +4,7 @@ import Header from '@/components/header'
 import { useLoggedContext } from '@/context/LoggedContext'
 import { useRouter, usePathname } from 'next/navigation'
 import styles from '@/styles/profile.module.scss'
+import { useEffect } from 'react'
 
 const Profile = () => {
   const { loggedIn, logout } = useLoggedContext()
@@ -14,6 +15,10 @@ const Profile = () => {
     logout()
     router.push('/login')
   }
+
+  useEffect(() => {
+    if (!loggedIn) router.push('/login')
+  }, [])
 
   if (loggedIn) {
     return (
@@ -64,9 +69,6 @@ const Profile = () => {
         </main>
       </>
     )
-  } else {
-    router.push('/login')
-    return null
   }
 }
 

@@ -3,6 +3,7 @@
 import LoginForm from '@/components/loginForm'
 import { useLoggedContext } from '@/context/LoggedContext'
 import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 const Login = () => {
   const { loggedIn, login } = useLoggedContext()
@@ -15,13 +16,14 @@ const Login = () => {
     router.push('/')
   }
 
+  useEffect(() => {
+    if (loggedIn) router.push('/')
+  }, [])
+
   if (!loggedIn) {
     return (
       <LoginForm validation={handleLogin} />
     )
-  } else {
-    router.push('/')
-    return null
   }
 }
 
