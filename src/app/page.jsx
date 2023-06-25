@@ -29,7 +29,7 @@ const Home = () => {
 
   useEffect(() => {
     if (!loggedIn) router.push('/login')
-  }, [loggedIn, router])
+  }, [])
 
   if (loggedIn) {
     return (
