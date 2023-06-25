@@ -2,12 +2,12 @@
 @use 'mixins' as mix;
 
 .main {
+  display: grid;
   min-height: calc(100dvh - 6rem);
   padding: 2rem 4rem;
 
   .container {
     @include mix.gen_container;
-    height: 100%;
     border-color: vars.$mainColor;
 
     .section_title {
