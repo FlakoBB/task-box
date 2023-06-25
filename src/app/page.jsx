@@ -6,7 +6,7 @@ import { useRouter, usePathname } from 'next/navigation'
 import styles from '@/styles/landing.module.scss'
 import TaskForm from '@/components/taskForm'
 import ListContainer from '@/components/listContainer'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 const Home = () => {
   const { loggedIn, logout } = useLoggedContext()
@@ -27,6 +27,10 @@ const Home = () => {
     router.push('/login')
   }
 
+  useEffect(() => {
+    if (!loggedIn) router.push('/login')
+  }, [loggedIn, router])
+
   if (loggedIn) {
     return (
       <>
@@ -44,9 +48,6 @@ const Home = () => {
         </main>
       </>
     )
-  } else {
-    router.push('/login')
-    return null
   }
 }
 
