@@ -1,7 +1,7 @@
 'use client'
 
 import Header from '@/components/header'
-import { useLoggedContext } from './layout'
+import { useLoggedContext } from '@/context/LoggedContext'
 import { useRouter, usePathname } from 'next/navigation'
 import styles from '@/styles/landing.module.scss'
 import TaskForm from '@/components/taskForm'

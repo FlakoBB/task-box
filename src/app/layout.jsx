@@ -1,11 +1,6 @@
-'use client'
-
 import '../styles/globals.scss'
 import { Jost } from 'next/font/google'
-// import { LoggedProvider } from '@/context/loggedContext'
-import { createContext, useContext, useState } from 'react'
-
-const LoggedContext = createContext()
+import { LogggedProvider } from '@/context/LoggedContext'
 
 const jost = Jost({
   subsets: ['latin'],
@@ -18,27 +13,15 @@ export const metadata = {
 }
 
 const RootLayout = ({ children }) => {
-  const [loggedIn, setLoggedIn] = useState(false)
-
-  const login = () => {
-    setLoggedIn(true)
-  }
-
-  const logout = () => {
-    setLoggedIn(false)
-  }
-
   return (
     <html className={jost.className} lang='es'>
       <body>
-        <LoggedContext.Provider value={{ loggedIn, login, logout }}>
+        <LogggedProvider>
           {children}
-        </LoggedContext.Provider>
+        </LogggedProvider>
       </body>
     </html>
   )
 }
-
-export const useLoggedContext = () => useContext(LoggedContext)
 
 export default RootLayout
