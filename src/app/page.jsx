@@ -9,7 +9,7 @@ import ListContainer from '@/components/listContainer'
 import { useEffect, useRef } from 'react'
 
 const Home = () => {
-  const { loggedIn, logout } = useLoggedContext()
+  const { loggedIn, logout, username } = useLoggedContext()
   const router = useRouter()
 
   const modal = useRef()
@@ -40,7 +40,7 @@ const Home = () => {
             <TaskForm />
           </div>
         </div>
-        <Header userName='FlakoBB' pathname={pathname} handleLogout={handleLogout} />
+        <Header userName={username} pathname={pathname} handleLogout={handleLogout} />
         <main className={styles.main}>
           <button className={styles.btn_new_task} onClick={handleModal}>Nueva Tarea</button>
           <ListContainer />

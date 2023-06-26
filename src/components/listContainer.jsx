@@ -10,7 +10,6 @@ const ListContainer = () => {
       <h1 className={styles.section_title}>Tus Tareas</h1>
       <div className={styles.container}>
         <ol className={styles.list}>
-          {/* // ToDo: Iterar sobre un objeto que contenga las tareas y mostrar un item por cada una */}
           {
             tasksList.map((task) => (
               <TaskItem key={task.id} taskData={task} />

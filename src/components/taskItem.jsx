@@ -13,7 +13,7 @@ const TaskItem = ({ taskData }) => {
         </div>
       </Link>
       <div className={styles.btns_group}>
-        {/* // ToDo: Poner iconos de FontAwesome a los botones */}
+        {/* // ToDo: Poner iconos de FontAwesome o Bootstrap a los botones */}
         <button className={`${styles.item_btn} ${styles.btn_delete}`}>B</button>
         <button className={`${styles.item_btn} ${styles.btn_complete}`}>C</button>
       </div>

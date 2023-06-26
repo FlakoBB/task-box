@@ -5,6 +5,7 @@ import { createContext, useContext, useState } from 'react'
 const LoggedContext = createContext()
 
 export const LogggedProvider = ({ children }) => {
+  // ToDo: poner la lista de tareas como un estado para agregar, eliminar y modificar tareas
   const tasksList = [
     {
       id: 1,
@@ -50,6 +51,14 @@ export const LogggedProvider = ({ children }) => {
     }
   ]
 
+  // ? Estado de nombre de usuario
+  const [username, setUsername] = useState('')
+
+  const obtainUsername = (username) => {
+    setUsername(username)
+  }
+
+  // ? Estado logeado
   const [loggedIn, setLoggedIn] = useState(false)
   const login = () => {
     setLoggedIn(true)
@@ -60,7 +69,7 @@ export const LogggedProvider = ({ children }) => {
   }
 
   return (
-    <LoggedContext.Provider value={{ loggedIn, login, logout, tasksList }}>
+    <LoggedContext.Provider value={{ loggedIn, login, logout, tasksList, obtainUsername, username }}>
       {children}
     </LoggedContext.Provider>
   )
