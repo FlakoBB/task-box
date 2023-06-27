@@ -84,7 +84,7 @@ export const LogggedProvider = ({ children }) => {
   }
 
   return (
-    <LoggedContext.Provider value={{ loggedIn, login, logout, tasksList, obtainUsername, username, addTask }}>
+    <LoggedContext.Provider value={{ loggedIn, login, logout, tasksList, obtainUsername, username, addTask, setTasksList }}>
       {children}
     </LoggedContext.Provider>
   )

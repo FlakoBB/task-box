@@ -82,6 +82,22 @@
   }
 }
 
+.item.completed {
+  background-color: rgba(vars.$completeColor, .3);
+
+  &:hover {
+    background-color: rgba(vars.$completeColor, .6);
+  }
+
+  a {
+    .task_data {
+      .title {
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .item {
     font-size: 1rem;
