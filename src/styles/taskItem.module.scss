@@ -58,6 +58,10 @@
       @include mix.gen_btn;
       width: 3rem;
       height: 3rem;
+
+      .BIcon {
+        color: inherit;
+      }
     }
 
     .btn_complete {

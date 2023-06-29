@@ -44,6 +44,10 @@
             background-color: vars.$mainColor;
             border-color: vars.$mainColor;
 
+            .BIcon {
+              color: inherit;
+            }
+
             &:hover {
               background-color: vars.$lightColor;
               color: vars.$mainColor;

@@ -5,6 +5,7 @@ import { useLoggedContext } from '@/context/LoggedContext'
 import { useRouter, usePathname } from 'next/navigation'
 import styles from '@/styles/profile.module.scss'
 import { useEffect } from 'react'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const Profile = () => {
   const { loggedIn, logout } = useLoggedContext()
@@ -32,28 +33,28 @@ const Profile = () => {
                 <label className={styles.label}>Usuario:</label>
                 <div className={styles.field_data}>
                   <p className={styles.data}>FlakoBB</p>
-                  <button>E</button>
+                  <button><i className={`bi bi-pencil-fill ${styles.BIcon}`} /></button>
                 </div>
               </div>
               <div className={styles.field_area}>
                 <label className={styles.label}>Nombre:</label>
                 <div className={styles.field_data}>
                   <p className={styles.data}>Joseph</p>
-                  <button>E</button>
+                  <button><i className={`bi bi-pencil-fill ${styles.BIcon}`} /></button>
                 </div>
               </div>
               <div className={styles.field_area}>
                 <label className={styles.label}>Apellido:</label>
                 <div className={styles.field_data}>
                   <p className={styles.data}>Ryan</p>
-                  <button>E</button>
+                  <button><i className={`bi bi-pencil-fill ${styles.BIcon}`} /></button>
                 </div>
               </div>
               <div className={styles.field_area}>
                 <label className={styles.label}>Contraseña:</label>
                 <div className={styles.field_data}>
                   <p className={styles.data}>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>
-                  <button>E</button>
+                  <button><i className={`bi bi-pencil-fill ${styles.BIcon}`} /></button>
                 </div>
               </div>
             </article>

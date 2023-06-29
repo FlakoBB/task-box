@@ -51,8 +51,12 @@
     font-size: 1rem;
     cursor: pointer;
 
+    .BIcon {
+      color: inherit;
+    }
+
     &:hover {
-      border: 2px solid vars.$mainColor;
+      border-color:vars.$mainColor;
     }
   }
 }

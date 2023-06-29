@@ -35,7 +35,7 @@ const Home = () => {
     return (
       <>
         <div className={styles.modal} ref={modal}>
-          <button onClick={handleModal}>X</button>
+          <button onClick={handleModal}><i className={`bi bi-x-circle-fill ${styles.BIcon}`} /></button>
           <div>
             <TaskForm />
           </div>

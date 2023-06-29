@@ -35,8 +35,8 @@ const TaskItem = ({ taskData }) => {
       </Link>
       <div className={styles.btns_group}>
         {/* // ToDo: Poner iconos de FontAwesome o Bootstrap a los botones */}
-        <button className={`${styles.item_btn} ${styles.btn_delete}`} onClick={() => deleteTask(id)}>B</button>
-        <button className={`${styles.item_btn} ${styles.btn_complete}`} onClick={() => completeTask(id)}>{state ? 'R' : 'C'}</button>
+        <button className={`${styles.item_btn} ${styles.btn_delete}`} onClick={() => deleteTask(id)}><i className={`bi bi-trash-fill ${styles.BIcon}`} /></button>
+        <button className={`${styles.item_btn} ${styles.btn_complete}`} onClick={() => completeTask(id)}>{state ? <i className={`bi bi-plus-circle-fill ${styles.BIcon}`} /> : <i className={`bi bi-check-circle-fill ${styles.BIcon}`} />}</button>
       </div>
     </li>
   )

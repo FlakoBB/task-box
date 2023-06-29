@@ -11,14 +11,14 @@ const TaskInfo = ({ task }) => {
               <label className={styles.label}>Titulo:</label>
               <div className={styles.field_data}>
                 <p className={styles.data}>{task.title}</p>
-                <button>E</button>
+                <button><i className={`bi bi-pencil-fill ${styles.BIcon}`} /></button>
               </div>
             </div>
             <div className={styles.field_area}>
               <label className={styles.label}>Descripción:</label>
               <div className={styles.field_data}>
                 <p className={styles.data}>{task.description}</p>
-                <button>E</button>
+                <button><i className={`bi bi-pencil-fill ${styles.BIcon}`} /></button>
               </div>
             </div>
           </div>
@@ -27,14 +27,14 @@ const TaskInfo = ({ task }) => {
               <label className={styles.label}>Prioridad:</label>
               <div className={styles.field_data}>
                 <p className={styles.data}>{task.priority}</p>
-                <button>E</button>
+                <button><i className={`bi bi-pencil-fill ${styles.BIcon}`} /></button>
               </div>
             </div>
             <div className={styles.field_area}>
               <label className={styles.label}>Estado:</label>
               <div className={styles.field_data}>
                 <p className={styles.data}>{task.state ? 'Completa' : 'Incompleta'}</p>
-                <button>E</button>
+                <button><i className={`bi bi-pencil-fill ${styles.BIcon}`} /></button>
               </div>
             </div>
             <div className={styles.btns_section}>
