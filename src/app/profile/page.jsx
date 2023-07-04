@@ -5,7 +5,6 @@ import { useLoggedContext } from '@/context/LoggedContext'
 import { useRouter, usePathname } from 'next/navigation'
 import styles from '@/styles/profile.module.scss'
 import { useEffect } from 'react'
-import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const Profile = () => {
   const { loggedIn, logout } = useLoggedContext()

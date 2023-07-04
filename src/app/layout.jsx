@@ -1,6 +1,7 @@
 import '../styles/globals.scss'
 import { Jost } from 'next/font/google'
 import { LogggedProvider } from '@/context/LoggedContext'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const jost = Jost({
   subsets: ['latin'],

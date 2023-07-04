@@ -14,7 +14,7 @@ const TaskItem = ({ taskData }) => {
 
   const completeTask = (taskID) => {
     const newTasksList = tasksList.map(task => {
-      if (task.id === id) {
+      if (task.id === taskID) {
         return {
           ...task,
           state: !task.state

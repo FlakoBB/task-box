@@ -1,6 +1,30 @@
+import { useLoggedContext } from '@/context/LoggedContext'
 import styles from '@/styles/taskInfo.module.scss'
+import { useRouter } from 'next/navigation'
 
 const TaskInfo = ({ task }) => {
+  const { tasksList, setTasksList } = useLoggedContext()
+  const router = useRouter()
+
+  const deleteTask = (taskID) => {
+    const newTasksList = tasksList.filter(task => task.id !== taskID)
+    setTasksList(newTasksList)
+    router.push('/')
+  }
+
+  const completeTask = (taskID) => {
+    const newTasksList = tasksList.map(taskSelected => {
+      if (taskSelected.id === taskID) {
+        return {
+          ...task,
+          state: !task.state
+        }
+      }
+      return taskSelected
+    })
+    setTasksList(newTasksList)
+  }
+
   return (
     <main className={styles.main}>
       <section className={styles.container}>
@@ -38,8 +62,8 @@ const TaskInfo = ({ task }) => {
               </div>
             </div>
             <div className={styles.btns_section}>
-              <button className={styles.btn_complete}>{task.state ? 'Reactivar' : 'Completar'}</button>
-              <button className={styles.btn_delete}>Borrar Tarea</button>
+              <button className={styles.btn_complete} onClick={() => completeTask(task.id)}>{task.state ? 'Reactivar' : 'Completar'}</button>
+              <button className={styles.btn_delete} onClick={() => deleteTask(task.id)}>Borrar Tarea</button>
             </div>
           </div>
         </article>
