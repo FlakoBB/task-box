@@ -31,7 +31,7 @@ const Profile = () => {
               <div className={styles.field_area}>
                 <label className={styles.label}>Usuario:</label>
                 <div className={styles.field_data}>
-                  <p className={styles.data}>FlakoBB</p>
+                  <p className={styles.data}>FLK</p>
                   <button><i className={`bi bi-pencil-fill ${styles.BIcon}`} /></button>
                 </div>
               </div>
