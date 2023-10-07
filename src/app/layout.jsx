@@ -4,8 +4,7 @@ import { LogggedProvider } from '@/context/LoggedContext'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const jost = Jost({
-  subsets: ['latin'],
-  variable: '--jost-font'
+  subsets: ['latin']
 })
 
 export const metadata = {
